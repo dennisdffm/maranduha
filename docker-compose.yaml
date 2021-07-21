@@ -2,7 +2,7 @@ version: "3.8"
 
 services: 
     
-    nodered:
+    node-red:
         container_name: "MaranduhaBot"
         build: .
         restart: on-failure:3
@@ -12,8 +12,3 @@ services:
             - ./envs/envs.env
         volumes:
             - ./shared:/shared
-            - vol-nodered-data:/data
-
-volumes:
-    vol-nodered-data:
-        name: nodered-data
