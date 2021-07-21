@@ -1,0 +1,19 @@
+version: "3.8"
+
+services: 
+    
+    nodered:
+        container_name: "MaranduhaBot"
+        build: .
+        restart: on-failure:3
+        ports:
+            - "1881:1880"
+        env_file:
+            - .envs/envs.env
+        volumes:
+            - shared:/shared
+            - vol-nodered-data:/data
+
+volumes:
+    vol-nodered-data:
+        name: nodered-data
