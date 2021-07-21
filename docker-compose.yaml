@@ -7,7 +7,7 @@ services:
         build: .
         restart: on-failure:3
         ports:
-            - "1881:1880"
+            - "1881:1881"
         env_file:
             - ./envs/envs.env
         volumes:
